@@ -1,5 +1,9 @@
 package es.ies;
-
+import java.util.Objects;
+/**
+ * @author nexphernandez
+ * @version 1.0.0
+ */
 public abstract class Persona {
     private String id;
     private String nombre;
@@ -7,14 +11,22 @@ public abstract class Persona {
     /**
      * Constructor por defecto
      */
-    public Persona(){}
+    protected Persona(){}
+
+    /**
+     * Constructor con la clave primaria
+     * @param id de la persona
+     */
+    protected Persona(String id){
+        this.id = id;
+    }
 
     /**
      * Constructor con los atributos de la clase
      * @param id de la persona
      * @param nombre de la persona
      */
-    public Persona(String id, String nombre){
+    protected Persona(String id, String nombre){
         this.id = id;
         this.nombre = nombre;
     }
@@ -41,6 +53,39 @@ public abstract class Persona {
      */
     public String saludar(){
         return "Hola yo soy" + nombre;
+    }
+
+    /**
+     * Metodo equals de la clase persona
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Persona)) {
+            return false;
+        }
+        Persona persona = (Persona) o;
+        return Objects.equals(id, persona.id);
+    }
+
+    /**
+     * Metodo hashCode de la clase persona
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre);
+    }
+
+    /**
+     * Metodo toString de la clase persona
+     */
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", nombre='" + getNombre() + "'" +
+            "}";
     }
 
 }
