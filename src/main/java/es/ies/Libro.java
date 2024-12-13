@@ -13,8 +13,12 @@ public class Libro {
      */
     public Libro() {
     }
-
     
+    /**
+     * Constructor de los atributos de la case
+     * @param autor del libro
+     * @param titulo del libro
+     */
     public Libro(String autor, String titulo) {
         this.autor = autor;
         this.titulo = titulo;
@@ -46,6 +50,9 @@ public class Libro {
         return this;
     }
 
+    /**
+     * Metodo equals de la clase
+     */
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -57,11 +64,17 @@ public class Libro {
         return Objects.equals(autor, libro.autor) && Objects.equals(titulo, libro.titulo);
     }
 
+    /**
+     * Metodo hasCode de la clase
+     */
     @Override
     public int hashCode() {
         return Objects.hash(autor, titulo);
     }
 
+    /**
+     * Metodo to string de la clase
+     */
     @Override
     public String toString() {
         return "{" +

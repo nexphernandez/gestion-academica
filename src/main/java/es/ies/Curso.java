@@ -1,5 +1,6 @@
 package es.ies;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 /**
@@ -33,7 +34,7 @@ public class Curso {
     public Curso(String nombre, int codigo, List<Estudiante> estudiantes) {
         this.nombre = nombre;
         this.codigo = codigo;
-        this.estudiantes = estudiantes;
+        this.estudiantes = new ArrayList<>();
     }
 
     public String getNombre() {
