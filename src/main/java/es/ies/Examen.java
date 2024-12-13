@@ -7,20 +7,20 @@ import java.util.Objects;
  * @version 1.0.0
  */
 
-public class Examenes {
+public class Examen {
     private Date fecha;
 
     /**
      * Constructor por defecto
      */
-    public Examenes() {
+    public Examen() {
     }
 
     /**
      * Cosntructor de los atributos de la clase
-     * @param fecha de los examenes
+     * @param fecha del examen
      */
-    public Examenes(Date fecha) {
+    public Examen(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -47,10 +47,10 @@ public class Examenes {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Examenes)) {
+        if (!(o instanceof Examen)) {
             return false;
         }
-        Examenes examenes = (Examenes) o;
+        Examen examenes = (Examen) o;
         return Objects.equals(fecha, examenes.fecha);
     }
 
